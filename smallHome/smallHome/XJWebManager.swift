@@ -7,7 +7,32 @@
 //
 
 import UIKit
-
+public protocol XJReminderDelegate: NSObjectProtocol {
+    func recivedNewReminder(reminder : Reminder)
+}
+public protocol XJMemoDelegate: NSObjectProtocol {
+    func recivedNewMemo(memo : Memorandum)
+}
 class XJWebManager: NSObject {
     
+    weak open var reminderDelegate: XJReminderDelegate?{
+        didSet{
+            Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(foundNewReminder), userInfo: nil, repeats: true)
+        }
+    }
+    weak open var memoDelegate: XJMemoDelegate?{
+        didSet{
+            Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(foundNewMemo), userInfo: nil, repeats: true)
+        }
+    }
+    //单例
+    static let shared = XJWebManager()
+    @objc func foundNewReminder(){
+        print("找到了一个新的Reminder")
+        reminderDelegate!.recivedNewReminder(reminder: Reminder())
+    }
+    @objc func foundNewMemo(){
+        print("找到了一个新的Memo")
+        memoDelegate!.recivedNewMemo(memo: Memorandum())
+    }
 }

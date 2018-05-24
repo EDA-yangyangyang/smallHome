@@ -8,7 +8,7 @@
 
 import UIKit
 
-class XJMemorandumViewController: UITableViewController {
+class XJMemorandumViewController: UITableViewController, XJMemoDelegate {
     override func loadView() {
         let tableView = UITableView.init(frame: UIScreen.main.bounds, style: .grouped)
         self.view = tableView
@@ -17,9 +17,9 @@ class XJMemorandumViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(dataArray)
+        XJWebManager.shared.memoDelegate = self
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
@@ -29,6 +29,9 @@ class XJMemorandumViewController: UITableViewController {
         return manager.getMemorandumInfo()
     }()
     
+    func recivedNewMemo(memo: Memorandum) {
+        
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
