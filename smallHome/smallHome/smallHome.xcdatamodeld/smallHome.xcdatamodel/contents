@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14133" systemVersion="17E202" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Memorandum" representedClassName="Memorandum" syncable="YES" codeGenerationType="class">
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="endPersons" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Person" inverseName="gottenMemorandums" inverseEntity="Person" syncable="YES"/>
+        <relationship name="startPerson" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="sendMemorandums" inverseEntity="Person" syncable="YES"/>
+    </entity>
+    <entity name="Person" representedClassName="Person" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="gottenMemorandums" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Memorandum" inverseName="endPersons" inverseEntity="Memorandum" syncable="YES"/>
+        <relationship name="gottenReminders" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Reminder" inverseName="endPersons" inverseEntity="Reminder" syncable="YES"/>
+        <relationship name="sendMemorandums" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Memorandum" inverseName="startPerson" inverseEntity="Memorandum" syncable="YES"/>
+        <relationship name="sendReminders" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Reminder" inverseName="startPerson" inverseEntity="Reminder" syncable="YES"/>
+    </entity>
+    <entity name="Reminder" representedClassName="Reminder" syncable="YES" codeGenerationType="class">
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="endPersons" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="gottenReminders" inverseEntity="Person" syncable="YES"/>
+        <relationship name="startPerson" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="sendReminders" inverseEntity="Person" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Person" positionX="-389" positionY="-0" width="128" height="135"/>
+        <element name="Memorandum" positionX="-54" positionY="0" width="128" height="105"/>
+        <element name="Reminder" positionX="-207" positionY="63" width="128" height="105"/>
+    </elements>
+</model>

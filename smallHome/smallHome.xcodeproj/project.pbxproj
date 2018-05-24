@@ -11,6 +11,10 @@
 		F2EF48F220B681F8005C076F /* smallHome.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F2EF48F020B681F8005C076F /* smallHome.xcdatamodeld */; };
 		F2EF48F420B681F9005C076F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2EF48F320B681F9005C076F /* Assets.xcassets */; };
 		F2EF48F720B681F9005C076F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2EF48F520B681F9005C076F /* LaunchScreen.storyboard */; };
+		F2EF490920B68597005C076F /* XJModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF490820B68597005C076F /* XJModelManager.swift */; };
+		F2EF490C20B685C0005C076F /* XJHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF490B20B685C0005C076F /* XJHomeViewController.swift */; };
+		F2EF491320B688EE005C076F /* XJMemorandumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF491220B688EE005C076F /* XJMemorandumViewController.swift */; };
+		F2EF491520B68909005C076F /* XJWebManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF491420B68909005C076F /* XJWebManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +24,10 @@
 		F2EF48F320B681F9005C076F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2EF48F620B681F9005C076F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F2EF48F820B681F9005C076F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2EF490820B68597005C076F /* XJModelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJModelManager.swift; sourceTree = "<group>"; };
+		F2EF490B20B685C0005C076F /* XJHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJHomeViewController.swift; sourceTree = "<group>"; };
+		F2EF491220B688EE005C076F /* XJMemorandumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJMemorandumViewController.swift; sourceTree = "<group>"; };
+		F2EF491420B68909005C076F /* XJWebManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJWebManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,32 +60,12 @@
 		F2EF48E820B681F8005C076F /* smallHome */ = {
 			isa = PBXGroup;
 			children = (
-				F2EF48FF20B6826D005C076F /* 所有的界面 */,
-				F2EF490620B68360005C076F /* model */,
-				F2EF490520B682B7005C076F /* Other */,
-				F2EF48FE20B6825C005C076F /* Manager */,
+				F2EF491120B687B4005C076F /* Other */,
+				F2EF491020B6877D005C076F /* Manager */,
+				F2EF490D20B6873C005C076F /* 所有的界面 */,
 				F2EF48F320B681F9005C076F /* Assets.xcassets */,
 			);
 			path = smallHome;
-			sourceTree = "<group>";
-		};
-		F2EF48FE20B6825C005C076F /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Manager;
-			sourceTree = "<group>";
-		};
-		F2EF48FF20B6826D005C076F /* 所有的界面 */ = {
-			isa = PBXGroup;
-			children = (
-				F2EF490720B68373005C076F /* 主界面 */,
-				F2EF490420B682A7005C076F /* 个人信息界面 */,
-				F2EF490320B6829F005C076F /* 提醒界面 */,
-				F2EF490220B68294005C076F /* 备忘录界面 */,
-				F2EF490020B68284005C076F /* 聊天界面 */,
-			);
-			path = "所有的界面";
 			sourceTree = "<group>";
 		};
 		F2EF490020B68284005C076F /* 聊天界面 */ = {
@@ -90,6 +78,7 @@
 		F2EF490220B68294005C076F /* 备忘录界面 */ = {
 			isa = PBXGroup;
 			children = (
+				F2EF491220B688EE005C076F /* XJMemorandumViewController.swift */,
 			);
 			path = "备忘录界面";
 			sourceTree = "<group>";
@@ -108,29 +97,44 @@
 			path = "个人信息界面";
 			sourceTree = "<group>";
 		};
-		F2EF490520B682B7005C076F /* Other */ = {
+		F2EF490720B68373005C076F /* 主界面 */ = {
+			isa = PBXGroup;
+			children = (
+				F2EF490B20B685C0005C076F /* XJHomeViewController.swift */,
+			);
+			path = "主界面";
+			sourceTree = "<group>";
+		};
+		F2EF490D20B6873C005C076F /* 所有的界面 */ = {
+			isa = PBXGroup;
+			children = (
+				F2EF490720B68373005C076F /* 主界面 */,
+				F2EF490420B682A7005C076F /* 个人信息界面 */,
+				F2EF490320B6829F005C076F /* 提醒界面 */,
+				F2EF490220B68294005C076F /* 备忘录界面 */,
+				F2EF490020B68284005C076F /* 聊天界面 */,
+			);
+			name = "所有的界面";
+			sourceTree = "<group>";
+		};
+		F2EF491020B6877D005C076F /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				F2EF490820B68597005C076F /* XJModelManager.swift */,
+				F2EF491420B68909005C076F /* XJWebManager.swift */,
+			);
+			name = Manager;
+			sourceTree = "<group>";
+		};
+		F2EF491120B687B4005C076F /* Other */ = {
 			isa = PBXGroup;
 			children = (
 				F2EF48E920B681F8005C076F /* AppDelegate.swift */,
 				F2EF48F520B681F9005C076F /* LaunchScreen.storyboard */,
 				F2EF48F820B681F9005C076F /* Info.plist */,
-			);
-			path = Other;
-			sourceTree = "<group>";
-		};
-		F2EF490620B68360005C076F /* model */ = {
-			isa = PBXGroup;
-			children = (
 				F2EF48F020B681F8005C076F /* smallHome.xcdatamodeld */,
 			);
-			path = model;
-			sourceTree = "<group>";
-		};
-		F2EF490720B68373005C076F /* 主界面 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "主界面";
+			name = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,6 +163,7 @@
 		F2EF48DE20B681F8005C076F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = XJ;
 				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "杨杨杨";
@@ -203,8 +208,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2EF490920B68597005C076F /* XJModelManager.swift in Sources */,
 				F2EF48EA20B681F8005C076F /* AppDelegate.swift in Sources */,
+				F2EF491320B688EE005C076F /* XJMemorandumViewController.swift in Sources */,
 				F2EF48F220B681F8005C076F /* smallHome.xcdatamodeld in Sources */,
+				F2EF491520B68909005C076F /* XJWebManager.swift in Sources */,
+				F2EF490C20B685C0005C076F /* XJHomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
