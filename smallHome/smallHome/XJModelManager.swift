@@ -185,6 +185,7 @@ extension XJModelManager {
             save()
         } catch {
             delog(error as NSError)
+            
             abort()
         }
     }
