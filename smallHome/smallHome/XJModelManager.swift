@@ -41,7 +41,7 @@ class XJModelManager: NSObject {
             let array = try context.fetch(request) as! [Memorandum]
             return array
         } catch{
-            print(error)
+            delog(error)
             abort()
         }
     }
@@ -66,7 +66,7 @@ class XJModelManager: NSObject {
             let array = try context.fetch(request) as! [Reminder]
             return array
         } catch{
-            print(error)
+            delog(error)
             abort()
         }
     }

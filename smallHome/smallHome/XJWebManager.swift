@@ -28,11 +28,11 @@ class XJWebManager: NSObject {
     //单例
     static let shared = XJWebManager()
     @objc func foundNewReminder(){
-        print("找到了一个新的Reminder")
+        delog("找到了一个新的Reminder")
         reminderDelegate!.recivedNewReminder(reminder: Reminder())
     }
     @objc func foundNewMemo(){
-        print("找到了一个新的Memo")
+        delog("找到了一个新的Memo")
         memoDelegate!.recivedNewMemo(memo: Memorandum())
     }
 }

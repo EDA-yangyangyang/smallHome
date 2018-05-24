@@ -15,6 +15,7 @@
 		F2EF490C20B685C0005C076F /* XJHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF490B20B685C0005C076F /* XJHomeViewController.swift */; };
 		F2EF491320B688EE005C076F /* XJMemorandumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF491220B688EE005C076F /* XJMemorandumViewController.swift */; };
 		F2EF491520B68909005C076F /* XJWebManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF491420B68909005C076F /* XJWebManager.swift */; };
+		F2EF491720B6A763005C076F /* SwiftPCH.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF491620B6A763005C076F /* SwiftPCH.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		F2EF490B20B685C0005C076F /* XJHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJHomeViewController.swift; sourceTree = "<group>"; };
 		F2EF491220B688EE005C076F /* XJMemorandumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJMemorandumViewController.swift; sourceTree = "<group>"; };
 		F2EF491420B68909005C076F /* XJWebManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJWebManager.swift; sourceTree = "<group>"; };
+		F2EF491620B6A763005C076F /* SwiftPCH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftPCH.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 			children = (
 				F2EF48E920B681F8005C076F /* AppDelegate.swift */,
 				F2EF48F520B681F9005C076F /* LaunchScreen.storyboard */,
+				F2EF491620B6A763005C076F /* SwiftPCH.swift */,
 				F2EF48F820B681F9005C076F /* Info.plist */,
 				F2EF48F020B681F8005C076F /* smallHome.xcdatamodeld */,
 			);
@@ -209,6 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2EF490920B68597005C076F /* XJModelManager.swift in Sources */,
+				F2EF491720B6A763005C076F /* SwiftPCH.swift in Sources */,
 				F2EF48EA20B681F8005C076F /* AppDelegate.swift in Sources */,
 				F2EF491320B688EE005C076F /* XJMemorandumViewController.swift in Sources */,
 				F2EF48F220B681F8005C076F /* smallHome.xcdatamodeld in Sources */,

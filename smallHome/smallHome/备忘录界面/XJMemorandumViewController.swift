@@ -16,7 +16,7 @@ class XJMemorandumViewController: UITableViewController, XJMemoDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(dataArray)
+//        delog(dataArray)
         XJWebManager.shared.memoDelegate = self
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
