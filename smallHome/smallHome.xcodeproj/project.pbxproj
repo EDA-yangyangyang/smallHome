@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34BF5AAE20B6A38A00303F7E /* XJChatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BF5AAD20B6A38A00303F7E /* XJChatTableViewController.swift */; };
 		F2EF48EA20B681F8005C076F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF48E920B681F8005C076F /* AppDelegate.swift */; };
 		F2EF48F220B681F8005C076F /* smallHome.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F2EF48F020B681F8005C076F /* smallHome.xcdatamodeld */; };
 		F2EF48F420B681F9005C076F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2EF48F320B681F9005C076F /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		34BF5AAD20B6A38A00303F7E /* XJChatTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = XJChatTableViewController.swift; path = smallHome/XJChatTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		F2EF48E620B681F8005C076F /* smallHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smallHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2EF48E920B681F8005C076F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2EF48F120B681F8005C076F /* smallHome.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = smallHome.xcdatamodel; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 		F2EF490020B68284005C076F /* 聊天界面 */ = {
 			isa = PBXGroup;
 			children = (
+				34BF5AAD20B6A38A00303F7E /* XJChatTableViewController.swift */,
 			);
 			path = "聊天界面";
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 				F2EF48F220B681F8005C076F /* smallHome.xcdatamodeld in Sources */,
 				F2EF491520B68909005C076F /* XJWebManager.swift in Sources */,
 				F2EF490C20B685C0005C076F /* XJHomeViewController.swift in Sources */,
+				34BF5AAE20B6A38A00303F7E /* XJChatTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
