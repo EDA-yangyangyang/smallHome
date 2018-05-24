@@ -12,16 +12,14 @@ class XJModelManager: NSObject {
     //MARK: - 常用方法放在这里
     ///返回备忘录信息
     public func memorandumInfo() -> [Memorandum] {
-        return shared.getMemorandumInfo()
+        return XJModelManager.shared.getMemorandumInfo()
     }
     ///返回提醒信息
     public func reminderInfo() -> [Reminder] {
-        return shared.getReminderInfo()
+        return XJModelManager.shared.getReminderInfo()
     }
     //一个单例
-    public lazy var shared: XJModelManager = {
-        return XJModelManager()
-    }()
+    static let shared = XJModelManager()
     //MARK: - 和coreData相连的部分
     //context懒加载
     lazy var context: NSManagedObjectContext = {
@@ -39,7 +37,6 @@ class XJModelManager: NSObject {
     ///返回本地备忘录信息
     func getMemorandumInfo() -> [Memorandum] {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: memoName)
-        
         do {
             let array = try context.fetch(request) as! [Memorandum]
             return array
@@ -67,9 +64,6 @@ class XJModelManager: NSObject {
         
         do {
             let array = try context.fetch(request) as! [Reminder]
-            for reminder in array {
-                print(reminder.content!)
-            }
             return array
         } catch{
             print(error)
