@@ -27,7 +27,8 @@ class XJHomeViewController: UIViewController {
         self.view.addSubview(btn2)
         
         let btn3 = UIButton.init(frame: CGRect.init(x: 100, y: 300, width: 100, height: 100))
-        btn3.titleLabel!.text = "提醒"
+        btn3.setTitle("提醒", for: .normal)
+        btn3.backgroundColor = .blue
         btn3.addTarget(self, action: #selector(goToRemind), for: .touchUpInside)
 
         self.view.addSubview(btn3)

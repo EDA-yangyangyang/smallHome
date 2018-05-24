@@ -80,7 +80,6 @@ class XJModelManager: NSObject {
     func randomAddReminders() {
         for i in 0..<5 {
             let memo = NSEntityDescription.insertNewObject(forEntityName: reminderName, into: context) as! Reminder
-            
             memo.content = infoArray[i]
             memo.time = Date.init(timeIntervalSinceReferenceDate: TimeInterval(i))
         }
