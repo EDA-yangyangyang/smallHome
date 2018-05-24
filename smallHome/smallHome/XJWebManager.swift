@@ -14,15 +14,16 @@ public protocol XJMemoDelegate: NSObjectProtocol {
     func recivedNewMemo(memo : Memorandum)
 }
 class XJWebManager: NSObject {
-    
+    //轮询时间
+    let requestTime = 60
     weak open var reminderDelegate: XJReminderDelegate?{
         didSet{
-            Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(foundNewReminder), userInfo: nil, repeats: true)
+            Timer.scheduledTimer(timeInterval: TimeInterval(requestTime), target: self, selector: #selector(foundNewReminder), userInfo: nil, repeats: true)
         }
     }
     weak open var memoDelegate: XJMemoDelegate?{
         didSet{
-            Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(foundNewMemo), userInfo: nil, repeats: true)
+            Timer.scheduledTimer(timeInterval: TimeInterval(requestTime), target: self, selector: #selector(foundNewMemo), userInfo: nil, repeats: true)
         }
     }
     //单例
@@ -34,5 +35,10 @@ class XJWebManager: NSObject {
     @objc func foundNewMemo(){
         delog("找到了一个新的Memo")
         memoDelegate!.recivedNewMemo(memo: Memorandum())
+    }
+    //一个人没有id的时候就要和服务器要一个id,暂时设置为自己的,以后要改
+    //FIXME: 这里以后要改
+    func requestNewId(name: String) -> String{
+        return "123123"
     }
 }

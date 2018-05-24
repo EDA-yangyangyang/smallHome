@@ -11,17 +11,19 @@ import UIKit
 class XJMemorandumViewController: UITableViewController, XJMemoDelegate {
     override func loadView() {
         let tableView = UITableView.init(frame: UIScreen.main.bounds, style: .grouped)
+        tableView.delegate = self
+        tableView.dataSource = self
         self.view = tableView
     }
-    
+    let memoReuseIdentifier = "memoReuseIdentifier"
     override func viewDidLoad() {
         super.viewDidLoad()
-//        delog(dataArray)
+        //设置web代理
         XJWebManager.shared.memoDelegate = self
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        //注册单元格
+        tableView.register(UINib.init(nibName: "XJMemoCell", bundle: nil), forCellReuseIdentifier: memoReuseIdentifier)
+        //更新视图数据
+        tableView.reloadData()
     }
     //数据源
     lazy var dataArray: [Memorandum] = {
@@ -45,9 +47,9 @@ class XJMemorandumViewController: UITableViewController, XJMemoDelegate {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: memoReuseIdentifier, for: indexPath)
 
-        // Configure the cell...
+        
 
         return cell
     }

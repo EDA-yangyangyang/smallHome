@@ -17,6 +17,9 @@
 		F2EF491320B688EE005C076F /* XJMemorandumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF491220B688EE005C076F /* XJMemorandumViewController.swift */; };
 		F2EF491520B68909005C076F /* XJWebManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF491420B68909005C076F /* XJWebManager.swift */; };
 		F2EF491720B6A763005C076F /* SwiftPCH.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF491620B6A763005C076F /* SwiftPCH.swift */; };
+		F2EF491A20B6ABFB005C076F /* XJMemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF491820B6ABFB005C076F /* XJMemoCell.swift */; };
+		F2EF491B20B6ABFB005C076F /* XJMemoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2EF491920B6ABFB005C076F /* XJMemoCell.xib */; };
+		F2EF491D20B6BB25005C076F /* XJPersonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF491C20B6BB25005C076F /* XJPersonManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		F2EF491220B688EE005C076F /* XJMemorandumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJMemorandumViewController.swift; sourceTree = "<group>"; };
 		F2EF491420B68909005C076F /* XJWebManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJWebManager.swift; sourceTree = "<group>"; };
 		F2EF491620B6A763005C076F /* SwiftPCH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftPCH.swift; sourceTree = "<group>"; };
+		F2EF491820B6ABFB005C076F /* XJMemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJMemoCell.swift; sourceTree = "<group>"; };
+		F2EF491920B6ABFB005C076F /* XJMemoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XJMemoCell.xib; sourceTree = "<group>"; };
+		F2EF491C20B6BB25005C076F /* XJPersonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJPersonManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				F2EF491220B688EE005C076F /* XJMemorandumViewController.swift */,
+				F2EF491820B6ABFB005C076F /* XJMemoCell.swift */,
+				F2EF491920B6ABFB005C076F /* XJMemoCell.xib */,
 			);
 			path = "备忘录界面";
 			sourceTree = "<group>";
@@ -126,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				F2EF490820B68597005C076F /* XJModelManager.swift */,
+				F2EF491C20B6BB25005C076F /* XJPersonManager.swift */,
 				F2EF491420B68909005C076F /* XJWebManager.swift */,
 			);
 			name = Manager;
@@ -153,6 +162,7 @@
 				F2EF48E220B681F8005C076F /* Sources */,
 				F2EF48E320B681F8005C076F /* Frameworks */,
 				F2EF48E420B681F8005C076F /* Resources */,
+				F2EF491E20B6C1CB005C076F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -203,11 +213,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2EF48F720B681F9005C076F /* LaunchScreen.storyboard in Resources */,
+				F2EF491B20B6ABFB005C076F /* XJMemoCell.xib in Resources */,
 				F2EF48F420B681F9005C076F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F2EF491E20B6C1CB005C076F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "TAGS=\"FIXME:\"\necho \"searching ${SRCROOT} for ${TAGS}\"\nfind \"${SRCROOT}\" \\( -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F2EF48E220B681F8005C076F /* Sources */ = {
@@ -220,7 +247,9 @@
 				F2EF491320B688EE005C076F /* XJMemorandumViewController.swift in Sources */,
 				F2EF48F220B681F8005C076F /* smallHome.xcdatamodeld in Sources */,
 				F2EF491520B68909005C076F /* XJWebManager.swift in Sources */,
+				F2EF491A20B6ABFB005C076F /* XJMemoCell.swift in Sources */,
 				F2EF490C20B685C0005C076F /* XJHomeViewController.swift in Sources */,
+				F2EF491D20B6BB25005C076F /* XJPersonManager.swift in Sources */,
 				34BF5AAE20B6A38A00303F7E /* XJChatTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
