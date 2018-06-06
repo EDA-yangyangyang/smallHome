@@ -12,12 +12,12 @@ class XJMemorandumViewController: UITableViewController, XJMemoDelegate {
     
     
     //一开始视图加载,重写loadView
-    override func loadView() {
-        let tableView = UITableView.init(frame: UIScreen.main.bounds, style: .grouped)
-        tableView.delegate = self
-        tableView.dataSource = self
-        self.view = tableView
-    }
+//    override func loadView() {
+//        let tableView = UITableView.init(frame: UIScreen.main.bounds, style: .grouped)
+//        tableView.delegate = self
+//        tableView.dataSource = self
+//        self.view = tableView
+//    }
     //设置重用标识符
     let memoReuseIdentifier = "memoReuseIdentifier"
     
@@ -35,10 +35,15 @@ class XJMemorandumViewController: UITableViewController, XJMemoDelegate {
         //取消tableView的那条横线
         tableView.separatorStyle = .none
     }
+    //头部视图及高度
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 44))
+        headView.backgroundColor = g_barColor
         
         return headView
+    }
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 100
     }
     //数据源
     lazy var dataArray: [Memorandum] = {
