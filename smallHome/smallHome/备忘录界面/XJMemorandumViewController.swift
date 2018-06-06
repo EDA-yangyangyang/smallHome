@@ -10,26 +10,24 @@ import UIKit
 
 class XJMemorandumViewController: UITableViewController, XJMemoDelegate {
     
-    
-    //一开始视图加载,重写loadView
-//    override func loadView() {
-//        let tableView = UITableView.init(frame: UIScreen.main.bounds, style: .grouped)
-//        tableView.delegate = self
-//        tableView.dataSource = self
-//        self.view = tableView
-//    }
     //设置重用标识符
     let memoReuseIdentifier = "memoReuseIdentifier"
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.title = "Memo"
+        self.title = "MMemo"
+//        self.navigationController?.navigationBar.color
+        
+        self.navigationController?.navigationBar.tintColor = g_titleColor
+        
         //设置web代理
         XJWebManager.shared.memoDelegate = self
         //设置高度
         tableView.rowHeight = 187;
         //注册单元格
         tableView.register(UINib(nibName: "XJMemoCell", bundle: nil), forCellReuseIdentifier: memoReuseIdentifier)
-//        tableView.register(XJMemoCell.self, forCellReuseIdentifier: memoReuseIdentifier)
         //更新视图数据
         tableView.reloadData()
         //取消tableView的那条横线
