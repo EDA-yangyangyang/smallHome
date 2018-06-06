@@ -9,9 +9,11 @@
 import UIKit
 
 class XJHomeViewController: UIViewController {
-
+    //
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.barTintColor = UIColor(displayP3Red: 42.0/255.0, green: 37.0/255.0, blue: 35.0/255.0, alpha: 1.0)
+        
         
         //瞎jb写的,先这样,以后再改
         self.view.backgroundColor = .white
@@ -37,10 +39,20 @@ class XJHomeViewController: UIViewController {
         self.view.addSubview(btn4)
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
+        super.viewDidDisappear(animated)
+    }
     //MARK: 点击进入备忘录界面
     @objc func goToMemorandum(){
         let vc = XJMemorandumViewController.init()
-        self.present(vc, animated: false, completion: nil)
+        
+        self.navigationController!.pushViewController(vc, animated: true)
+//        self.present(vc, animated: false, completion: nil)
     }
     //MARK: 点击进入提醒界面
     @objc func goToRemind(){

@@ -8,10 +8,10 @@
 
 import UIKit
 public protocol XJReminderDelegate: NSObjectProtocol {
-    func recivedNewReminder(reminder : Reminder)
+    func recivedNewReminder(reminder : Reminder?)
 }
 public protocol XJMemoDelegate: NSObjectProtocol {
-    func recivedNewMemo(memo : Memorandum)
+    func recivedNewMemo(memo : Memorandum?)
 }
 class XJWebManager: NSObject {
     //轮询时间
@@ -30,11 +30,11 @@ class XJWebManager: NSObject {
     static let shared = XJWebManager()
     @objc func foundNewReminder(){
         delog("找到了一个新的Reminder")
-        reminderDelegate!.recivedNewReminder(reminder: Reminder())
+        reminderDelegate!.recivedNewReminder(reminder: nil)
     }
     @objc func foundNewMemo(){
         delog("找到了一个新的Memo")
-        memoDelegate!.recivedNewMemo(memo: Memorandum())
+        memoDelegate!.recivedNewMemo(memo: nil)
     }
     //一个人没有id的时候就要和服务器要一个id,暂时设置为自己的,以后要改
     //FIXME: 这里以后要改

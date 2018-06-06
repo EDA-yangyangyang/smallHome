@@ -20,7 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow.init(frame: UIScreen.main.bounds)
         let homeVC = XJHomeViewController.init()
-        window?.rootViewController = homeVC
+        
+        let nav = UINavigationController(rootViewController: homeVC)
+        window?.rootViewController = nav
         window?.makeKeyAndVisible()
         
         return true

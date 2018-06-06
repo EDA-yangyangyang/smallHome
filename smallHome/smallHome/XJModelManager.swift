@@ -18,7 +18,6 @@ class XJModelManager: NSObject {
     //MARK: - 代理
     weak open var reminderDelegate: XJReminderDelegate?{
         didSet{
-            
             XJWebManager.shared.reminderDelegate = reminderDelegate
         }
     }
