@@ -13,7 +13,8 @@ class XJHomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.barTintColor = g_barColor
-        
+        self.navigationController?.navigationBar.isTranslucent = false
+
         
         //瞎jb写的,先这样,以后再改
         self.view.backgroundColor = .white
