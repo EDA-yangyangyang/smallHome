@@ -26,7 +26,7 @@ class XJMemoCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.backgroundColor = UIColor(displayP3Red: 255.0/255.0, green: 243.0/255.0, blue: 233.0/255.0, alpha: 1.0)
+        self.backgroundColor = g_cellBackgroundColor
     }
     //视图更新写在这里
     override func layoutIfNeeded() {

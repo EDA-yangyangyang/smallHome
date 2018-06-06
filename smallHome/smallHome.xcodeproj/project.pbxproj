@@ -10,6 +10,7 @@
 		34BF5AAE20B6A38A00303F7E /* XJChatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BF5AAD20B6A38A00303F7E /* XJChatTableViewController.swift */; };
 		F22C236820C7A6D900787F1F /* XJMemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22C236620C7A6D900787F1F /* XJMemoCell.swift */; };
 		F22C236920C7A6D900787F1F /* XJMemoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F22C236720C7A6D900787F1F /* XJMemoCell.xib */; };
+		F22C236D20C7B6F300787F1F /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22C236C20C7B6F300787F1F /* Global.swift */; };
 		F2EF48EA20B681F8005C076F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF48E920B681F8005C076F /* AppDelegate.swift */; };
 		F2EF48F220B681F8005C076F /* smallHome.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F2EF48F020B681F8005C076F /* smallHome.xcdatamodeld */; };
 		F2EF48F420B681F9005C076F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2EF48F320B681F9005C076F /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 		34BF5AAD20B6A38A00303F7E /* XJChatTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = XJChatTableViewController.swift; path = smallHome/XJChatTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		F22C236620C7A6D900787F1F /* XJMemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJMemoCell.swift; sourceTree = "<group>"; };
 		F22C236720C7A6D900787F1F /* XJMemoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XJMemoCell.xib; sourceTree = "<group>"; };
+		F22C236C20C7B6F300787F1F /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		F2EF48E620B681F8005C076F /* smallHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smallHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2EF48E920B681F8005C076F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2EF48F120B681F8005C076F /* smallHome.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = smallHome.xcdatamodel; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				F2EF48E920B681F8005C076F /* AppDelegate.swift */,
+				F22C236C20C7B6F300787F1F /* Global.swift */,
 				F2EF48F520B681F9005C076F /* LaunchScreen.storyboard */,
 				F2EF491620B6A763005C076F /* SwiftPCH.swift */,
 				F2EF48F820B681F9005C076F /* Info.plist */,
@@ -247,6 +250,7 @@
 				F22C236820C7A6D900787F1F /* XJMemoCell.swift in Sources */,
 				F2EF491320B688EE005C076F /* XJMemorandumViewController.swift in Sources */,
 				F2EF48F220B681F8005C076F /* smallHome.xcdatamodeld in Sources */,
+				F22C236D20C7B6F300787F1F /* Global.swift in Sources */,
 				F2EF491520B68909005C076F /* XJWebManager.swift in Sources */,
 				F2EF490C20B685C0005C076F /* XJHomeViewController.swift in Sources */,
 				F2EF491D20B6BB25005C076F /* XJPersonManager.swift in Sources */,

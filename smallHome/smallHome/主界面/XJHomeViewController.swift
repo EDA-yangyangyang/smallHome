@@ -12,7 +12,7 @@ class XJHomeViewController: UIViewController {
     //
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.barTintColor = UIColor(displayP3Red: 42.0/255.0, green: 37.0/255.0, blue: 35.0/255.0, alpha: 1.0)
+        self.navigationController?.navigationBar.barTintColor = g_barColor
         
         
         //瞎jb写的,先这样,以后再改
