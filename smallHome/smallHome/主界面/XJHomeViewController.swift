@@ -52,11 +52,11 @@ class XJHomeViewController: UIViewController {
         let vc = XJMemorandumViewController.init()
         
         self.navigationController!.pushViewController(vc, animated: true)
-//        self.present(vc, animated: false, completion: nil)
     }
     //MARK: 点击进入提醒界面
     @objc func goToRemind(){
         //进入你写的提醒Controller
+        
         abort()
     }
 }

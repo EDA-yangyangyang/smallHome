@@ -37,7 +37,7 @@ class XJMemorandumViewController: UITableViewController, XJMemoDelegate {
     }
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 44))
-        headView.backgroundColor =
+        
         return headView
     }
     //数据源
