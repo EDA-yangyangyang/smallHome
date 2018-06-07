@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		34BF5AAE20B6A38A00303F7E /* XJChatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BF5AAD20B6A38A00303F7E /* XJChatTableViewController.swift */; };
+		355275076D1733CF7A881E64 /* Pods_smallHome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06DAAA9D229A84A95FD837B0 /* Pods_smallHome.framework */; };
 		F22C236820C7A6D900787F1F /* XJMemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22C236620C7A6D900787F1F /* XJMemoCell.swift */; };
 		F22C236920C7A6D900787F1F /* XJMemoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F22C236720C7A6D900787F1F /* XJMemoCell.xib */; };
 		F22C236D20C7B6F300787F1F /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22C236C20C7B6F300787F1F /* Global.swift */; };
+		F2988BB320C81CA50068B49B /* XJMemoDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2988BB220C81CA50068B49B /* XJMemoDetailController.swift */; };
 		F2EF48EA20B681F8005C076F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF48E920B681F8005C076F /* AppDelegate.swift */; };
 		F2EF48F220B681F8005C076F /* smallHome.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F2EF48F020B681F8005C076F /* smallHome.xcdatamodeld */; };
 		F2EF48F420B681F9005C076F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2EF48F320B681F9005C076F /* Assets.xcassets */; };
@@ -24,10 +26,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04CA9941EE584FD7FDBAC27B /* Pods-smallHome.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smallHome.release.xcconfig"; path = "Pods/Target Support Files/Pods-smallHome/Pods-smallHome.release.xcconfig"; sourceTree = "<group>"; };
+		06DAAA9D229A84A95FD837B0 /* Pods_smallHome.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_smallHome.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		34BF5AAD20B6A38A00303F7E /* XJChatTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = XJChatTableViewController.swift; path = smallHome/XJChatTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		B444E9D38C8FF76F92CF0154 /* Pods-smallHome.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smallHome.debug.xcconfig"; path = "Pods/Target Support Files/Pods-smallHome/Pods-smallHome.debug.xcconfig"; sourceTree = "<group>"; };
 		F22C236620C7A6D900787F1F /* XJMemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJMemoCell.swift; sourceTree = "<group>"; };
 		F22C236720C7A6D900787F1F /* XJMemoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XJMemoCell.xib; sourceTree = "<group>"; };
 		F22C236C20C7B6F300787F1F /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		F2988BB220C81CA50068B49B /* XJMemoDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJMemoDetailController.swift; sourceTree = "<group>"; };
 		F2EF48E620B681F8005C076F /* smallHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smallHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2EF48E920B681F8005C076F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2EF48F120B681F8005C076F /* smallHome.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = smallHome.xcdatamodel; sourceTree = "<group>"; };
@@ -47,17 +53,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				355275076D1733CF7A881E64 /* Pods_smallHome.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B278E8A09131804AF73AD33 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B444E9D38C8FF76F92CF0154 /* Pods-smallHome.debug.xcconfig */,
+				04CA9941EE584FD7FDBAC27B /* Pods-smallHome.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		46E314C42BE16E3ACEBA7AB6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				06DAAA9D229A84A95FD837B0 /* Pods_smallHome.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F2EF48DD20B681F8005C076F = {
 			isa = PBXGroup;
 			children = (
 				F2EF48E820B681F8005C076F /* smallHome */,
 				F2EF48E720B681F8005C076F /* Products */,
+				0B278E8A09131804AF73AD33 /* Pods */,
+				46E314C42BE16E3ACEBA7AB6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,6 +120,7 @@
 				F2EF491220B688EE005C076F /* XJMemorandumViewController.swift */,
 				F22C236620C7A6D900787F1F /* XJMemoCell.swift */,
 				F22C236720C7A6D900787F1F /* XJMemoCell.xib */,
+				F2988BB220C81CA50068B49B /* XJMemoDetailController.swift */,
 			);
 			path = "备忘录界面";
 			sourceTree = "<group>";
@@ -162,10 +189,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F2EF48FB20B681F9005C076F /* Build configuration list for PBXNativeTarget "smallHome" */;
 			buildPhases = (
+				D205FE8BA2F20BCD5EE38176 /* [CP] Check Pods Manifest.lock */,
 				F2EF48E220B681F8005C076F /* Sources */,
 				F2EF48E320B681F8005C076F /* Frameworks */,
 				F2EF48E420B681F8005C076F /* Resources */,
 				F2EF491E20B6C1CB005C076F /* ShellScript */,
+				E45275C42CD2C1FCA1F0292D /* [CP] Embed Pods Frameworks */,
+				03161C54A2CDBD9413BCB4BD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -224,6 +254,57 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		03161C54A2CDBD9413BCB4BD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-smallHome/Pods-smallHome-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D205FE8BA2F20BCD5EE38176 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-smallHome-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E45275C42CD2C1FCA1F0292D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-smallHome/Pods-smallHome-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-smallHome/Pods-smallHome-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F2EF491E20B6C1CB005C076F /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -250,6 +331,7 @@
 				F22C236820C7A6D900787F1F /* XJMemoCell.swift in Sources */,
 				F2EF491320B688EE005C076F /* XJMemorandumViewController.swift in Sources */,
 				F2EF48F220B681F8005C076F /* smallHome.xcdatamodeld in Sources */,
+				F2988BB320C81CA50068B49B /* XJMemoDetailController.swift in Sources */,
 				F22C236D20C7B6F300787F1F /* Global.swift in Sources */,
 				F2EF491520B68909005C076F /* XJWebManager.swift in Sources */,
 				F2EF490C20B685C0005C076F /* XJHomeViewController.swift in Sources */,
@@ -388,15 +470,13 @@
 		};
 		F2EF48FC20B681F9005C076F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B444E9D38C8FF76F92CF0154 /* Pods-smallHome.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FPFL449QLB;
 				INFOPLIST_FILE = smallHome/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = yyy.smallHome;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -406,15 +486,13 @@
 		};
 		F2EF48FD20B681F9005C076F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04CA9941EE584FD7FDBAC27B /* Pods-smallHome.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FPFL449QLB;
 				INFOPLIST_FILE = smallHome/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = yyy.smallHome;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

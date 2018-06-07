@@ -50,7 +50,7 @@ class XJHomeViewController: UIViewController {
     }
     //MARK: 点击进入备忘录界面
     @objc func goToMemorandum(){
-        let vc = XJMemorandumViewController(style: .grouped)
+        let vc = XJMemorandumViewController()
         
         self.navigationController!.pushViewController(vc, animated: true)
     }
