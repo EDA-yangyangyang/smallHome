@@ -8,24 +8,158 @@
 
 import UIKit
 import CoreData
-class XJManager: NSObject {
+//接收消息的代理
+protocol XJMessageDelegate {
+    func didReceiveMessage(Message: [EMMessage])
+}
 
+class XJManager: NSObject {
+    ///单例变量
     static let shared = XJManager()
+    ///代理
+    var messageDelegate:XJMessageDelegate?
     let currentUser: User? = {
         let buser = bmobManager.currentUser
+
         if buser == nil {
             return nil
         }
         else {
-            let predicate = NSPredicate(format: "%s == %s", objectIdString, buser!.objectId)
+            let predicate = NSPredicate(format: "\(objectIdString) == %@", buser!.objectId)
             let user = modelManager.getUserInfo(predicate: predicate, sortDescriptors: nil)
-            return user[0]
+            if user.count == 0 {
+                return nil
+            } else {
+                return user[0]
+            }
         }
     }()
-    func test(){
+    
+    /**
+     * 羊羊羊注释:
+     * 自动化登录的一些设置,目前还没有设置
+     */
+    func initalizeAuto(){
         
     }
-    
+    /**
+     * 羊羊羊注释:
+     * 重写init
+     */
+    override init() {
+        super.init()
+        initalizeAuto()
+    }
+    ///测试用的函数
+    func test(){
+        delog("func_test")
+        
+//        logout()
+        
+//        self.creatUser(username: "test3", password: "123456", name: "yyy3") { (error, user) in
+//            if error == nil {
+//                delog(user)
+//            } else {
+//                delog(error)
+//            }
+//        }
+        
+        self.loginUser(username: "test3", password: "123456") { (error, user) in
+            if error == nil {
+                delog(user)
+            }
+        }
+        
+//        self.creatGroup(groupName: "test_y") { (error, group) in
+//            if error == nil {
+//                delog(group)
+//            }
+//        }
+        
+        self.getGroups(groupName: "test_y") { (error, groups) in
+            if error == nil {
+                delog(groups)
+                self.joinGroup(group: groups![0], block: { (error, group) in
+                    if error == nil {
+                        delog("加入成功")
+                    }
+                })
+            }
+        }
+        
+//        self.addMemo(header: "1", recivers: nil, content: "qwe") { (error, memo) in
+//            if error == nil {
+//                delog(memo)
+//
+//                self.getMemos { (error0, memos) in
+//                    delog(memos[0])
+//                }
+//            }
+//        }
+        
+//        self.sendMessage(content: "testhahaha") { (msg, error) in
+//            if error == nil {
+//                delog(msg)
+//            }
+//        }
+        
+        
+    }
+    /**
+     * 羊羊羊注释:
+     * 账户注销
+     */
+    func logout() {
+        delog("账户注销")
+        BmobUser.logout()
+        EMClient.shared().logout(false)
+    }
+}
+
+//MARK: - 发送接收消息相关
+extension XJManager: EMChatManagerDelegate {
+    func sendMessage(content: String, block: @escaping (EMMessage?, EMError?) -> Swift.Void) {
+        EMManager.sendMessage(content: content, completion: block)
+    }
+    /**
+     * 羊羊羊注释:
+     * 获取一堆messages
+     */
+    func getMessages(completion: @escaping ([EMMessage]?,EMError?) -> Swift.Void){
+        EMManager.getMessages(completion: completion)
+    }
+    /**
+     * 羊羊羊注释:
+     * @param message 根据这一个message获取到它之前的message
+     */
+    func getMessages(message: EMMessage, completion: @escaping ([EMMessage]?,EMError?) -> Swift.Void){
+        EMManager.getMessages(message: message, completion: completion)
+    }
+    /**
+     * 羊羊羊注释:
+     * @param message 根据这一个message获取到它之前的message
+     * @param count 限制数量,这个不填就是20个
+     */
+    func getMessages(message: EMMessage?, count: Int, completion: @escaping ([EMMessage]?,EMError?) -> Swift.Void){
+        EMManager.getMessages(message: message, count: count, completion: completion)
+    }
+    /**
+     * 羊羊羊注释:
+     * @param message 根据这一个message获取到它之前的message
+     * @param count 限制数量,这个不填就是20个
+     * @param direction 刷新的方向,默认是向上的
+     */
+    func getMessages(message: EMMessage?, count: Int, direction: EMMessageSearchDirection, completion: @escaping ([EMMessage]?,EMError?) -> Swift.Void){
+        EMManager.getMessages(message: message, count: count, direction: direction, completion: completion)
+    }
+    /**
+     * 羊羊羊注释:
+     * 收到了一条新消息以后
+     */
+    func messagesDidReceive(_ aMessages: [Any]!) {
+        delog("收到了消息")
+        messageDelegate?.didReceiveMessage(Message: aMessages as! [EMMessage])
+    }
 }
 //MARK: - 备忘录提醒相关
 extension XJManager {
@@ -118,28 +252,33 @@ extension XJManager {
      * @param   username    用户账号
      * @param   password    密码
      * @param   block   创建成功后的回调
+     * 这里的user会返回nil,正常现象emmm
      */
-    func loginUser(username: String, password: String,block: @escaping (Error?,BmobUser?) -> Swift.Void){
+    func loginUser(username: String, password: String,block: @escaping (Error?,User?) -> Swift.Void){
+        delog("登录EM")
         EMManager.login(username: username, password: password) { (username, error) in
             if error != nil {
                 delog(error?.errorDescription)
+                block(NSError(domain: error!.errorDescription, code: 0, userInfo: nil) ,nil)
             }
             else {
-                //EM创建成功了以后
+                delog("登录bmob")
+                //EM登录成功了以后
                 bmobManager.loginUser(username: username!, password: password) { (error, buser) in
+                    var user0:User? = nil
                     if error != nil {
                         delog(error)
                     }else{
+                        delog("登录成功")
                         //如果非空则把新的user加到数据库里面
                         modelManager.addUser(objectId: buser!.objectId,block: { (user) in
                             self.transObjectToUser(object: buser!, user: user)
+                            user0 = user
                         })
                     }
-                    block(error,buser)
+                    block(error,user0)
                 }
-                
             }
-            
         }
         
     }
@@ -150,19 +289,21 @@ extension XJManager {
      * @param   name    名字
      * @param   block   创建成功后的回调
      */
-    func creatUser(username: String, password: String, name: String,block: @escaping (Error?,BmobUser?) -> Swift.Void){
-        EMManager.regist(username: username, password: password) { (_, error) in
+    func creatUser(username: String, password: String, name: String,block: @escaping (Error?,User?) -> Swift.Void){
+        EMManager.regist(username: username, password: password) { (EMUser, error) in
             if error == nil {
                 bmobManager.creatUser(username: username, password: password, name: name) { (error, buser) in
+                    var user0:User!
                     if error != nil {
                         delog(error)
                     }else{
                         //如果非空则把新的user加到数据库里面
                         modelManager.addUser(objectId: buser!.objectId, block: { (user) in
                             self.transObjectToUser(object: buser!, user: user)
+                            user0 = user
                         })
                     }
-                    block(error,buser)
+                    block(error,user0)
                 }
             }
         }
@@ -175,8 +316,8 @@ extension XJManager {
      */
     func creatGroup(groupName: String,block: @escaping (Error?,Group?) -> Swift.Void){
         EMManager.createGroup(groupName: groupName) { (group, error) in
-            if error != nil {
-                bmobManager.creatGroup(groupName: groupName) { (error, object) in
+            if error == nil {
+                bmobManager.creatGroup(groupName: groupName, EMID: group!.groupId) { (error, object) in
                     var g:Group?
                     if error != nil {
                         delog(error)
@@ -287,7 +428,7 @@ extension XJManager {
         }
         group.updatedAt = object.updatedAt
         group.objectId = object.objectId
-        group.emID = object.object(forKey:group_nameString) as? String
+        group.emID = object.object(forKey:group_emIDString) as? String
         group.name = object.object(forKey:group_nameString) as? String
         
         let file = object.object(forKey: user_headerImageString) as? BmobFile
@@ -315,7 +456,6 @@ extension XJManager {
         let obj = BmobUser()
         obj.objectId = user.objectId
         obj.username = user.username
-        
         obj.setObject(user.emID, forKey: user_emIDString)
         obj.setObject(user.name, forKey: user_nameString)
         obj.setObject(user.belongGroup, forKey: user_groupString)

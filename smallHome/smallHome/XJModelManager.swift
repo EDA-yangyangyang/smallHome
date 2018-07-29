@@ -46,7 +46,7 @@ extension XJModelManager {
     //MARK: - 查
     ///查询一个Memo是否已经存在数据库中
     func findMemoExist(objectId: String) -> Bool {
-        let predicate = NSPredicate(format: "objectId == %s", objectId)
+        let predicate = NSPredicate(format: "objectId == %@", objectId)
         let answer = getInfo(str: memoName, predicate: predicate, sortDescriptors: nil)
         return answer.count > 0 ? true : false
     }
@@ -56,10 +56,10 @@ extension XJModelManager {
     }
     ///通过一个id获取到user
     func getUserByID(objectId: String) -> User?{
-        let predicate = NSPredicate(format: "%s == %s", objectIdString, objectId)
-        let info = getInfo(str: UserName, predicate: nil, sortDescriptors: nil) as! [User]
+        let predicate = NSPredicate(format: "%@ == %@", objectIdString, objectId)
+        let info = getInfo(str: UserName, predicate: predicate, sortDescriptors: nil) as! [User]
         if info.count > 0 {
-            return info[0] as? User
+            return info[0]
         }
         else {
             return nil
@@ -112,7 +112,7 @@ extension XJModelManager {
      * 添加一个备忘录
      */
     func addMemo(objectId: String, block: (Memo)->Swift.Void){
-        let predicate = NSPredicate(format: "objectId == %s", objectId)
+        let predicate = NSPredicate(format: "objectId == %@", objectId)
         if getMemoInfo(predicate: predicate, sortDescriptors: nil).count != 0 {
             delog("memo已经存在,现在去更新memo")
             //FIXME: 更新啊更新
@@ -126,7 +126,7 @@ extension XJModelManager {
      * 添加一个用户
      */
     func addUser(objectId: String, block: (User)->Swift.Void){
-        let predicate = NSPredicate(format: "objectId == %s", objectId)
+        let predicate = NSPredicate(format: "objectId == %@", objectId)
         if getUserInfo(predicate: predicate, sortDescriptors: nil).count != 0 {
             delog("user已经存在,现在去更新user")
             //FIXME: 更新啊更新
@@ -140,7 +140,7 @@ extension XJModelManager {
      * 添加一个Group
      */
     func addGroup(objectId: String, block: (Group)->Swift.Void){
-        let predicate = NSPredicate(format: "objectId == %s", objectId)
+        let predicate = NSPredicate(format: "objectId == %@", objectId)
         if getUserInfo(predicate: predicate, sortDescriptors: nil).count != 0 {
             delog("user已经存在")
         }
@@ -165,9 +165,11 @@ extension XJModelManager {
     //MARK: - 测试时候用的
     //删除所有备忘录信息
     func deleteAllMemos() {
+        delog("删除所有备忘录")
         delete(str: memoName)
     }
     func deleteAllUsers(){
+        delog("删除所有用户")
         delete(str: UserName)
     }
     //删除str对应的数据

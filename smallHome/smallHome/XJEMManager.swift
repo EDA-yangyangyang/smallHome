@@ -60,13 +60,14 @@ class XJEMManager: NSObject {
      * 初始化一些基本信息
      */
     func initConfig(){
-        chatManager.add(self, delegateQueue: DispatchQueue.init(label: "charQueue"))
+        delog("EMManager初始化")
+        chatManager.add(XJManager.shared, delegateQueue: DispatchQueue.init(label: "chatQueue"))
         delog("设置代理成功")
     }
     
 }
 //MARK: - 聊天相关 向自己的群组发送一条消息  获取消息
-extension XJEMManager: EMChatManagerDelegate{
+extension XJEMManager{
     /**
      * 羊羊羊注释:
      * 发送一条消息
@@ -118,13 +119,6 @@ extension XJEMManager: EMChatManagerDelegate{
         conversation.loadMessagesStart(fromId: message?.messageId, count: 20, searchDirection: direction) { (messages, error) in
             self.deal(obj: messages as? [EMMessage], error: error, completion: completion)
         }
-    }
-    /**
-     * 羊羊羊注释:
-     * 收到消息以后的代理
-     */
-    func messagesDidReceive(_ aMessages: [Any]!) {
-        delog(aMessages)
     }
 }
 //MARK: - 群组相关,创建群组,寻找群组,加入群组,获取我的群组
@@ -212,8 +206,13 @@ extension XJEMManager{
      */
     func regist(username: String, password: String,completion: @escaping (String?,EMError?) -> Swift.Void){
         
-        EMClient.shared().register(withUsername: username, password: password) { (username, error) in
-            self.deal(obj: username, error: error, completion: completion)
+        EMClient.shared().register(withUsername: username, password: password) { (username0, error) in
+            self.login(username: username0!, password: password, completion: { (string, error) in
+                if error != nil {
+                    delog(error)
+                }
+            })
+            self.deal(obj: username0, error: error, completion: completion)
         }
     }
     /**
@@ -229,7 +228,8 @@ extension XJEMManager{
                 }
             }
         } else {
-            print("已经登录了")
+            delog("已经登录了")
+            completion(EMClient.shared().currentUsername,nil)
         }
     }
 }

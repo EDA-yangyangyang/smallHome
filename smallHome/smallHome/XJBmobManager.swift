@@ -142,9 +142,10 @@ extension XJBmobManager {
     /**
      * 当前用户创建一个Group
      * @param   groupName    group的名字
+     * @param   EMID   EMID
      * @param   block   创建成功后的回调
      */
-    func creatGroup(groupName: String,block: @escaping (Error?,BmobObject?) -> Swift.Void){
+    func creatGroup(groupName: String, EMID: String, block: @escaping (Error?,BmobObject?) -> Swift.Void){
         //如果当前用户为空一般是没办法调用这个方法的,除非是数据错误
         if(currentUser == nil){
             abort()
@@ -155,6 +156,7 @@ extension XJBmobManager {
         }
         let group = BmobObject(className: group_groupString)!
         group.setObject(groupName, forKey: group_groupString)
+        group.setObject(EMID, forKey: group_emIDString)
         group.setObject(currentUser, forKey: group_createrString)
         group.saveInBackground { (bool, error) in
             block(error,group)
@@ -206,7 +208,8 @@ extension XJBmobManager {
         }
         //如果用户已经属于一个群组,也是没办法调用的
         if currentUser!.object(forKey: user_groupString) != nil {
-            abort()
+//            abort()
+            delog("error!")
         }
         let relation = BmobRelation()
         relation.add(currentUser)
