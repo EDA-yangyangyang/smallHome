@@ -9,6 +9,9 @@
 import UIKit
 
 class XJHomeViewController: UIViewController {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        XJManager.shared.test()
+    }
     //
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +29,7 @@ class XJHomeViewController: UIViewController {
         btn2.setTitle("备忘录", for: UIControlState.normal)
         btn2.setTitleColor(.white, for: .normal)
         btn2.backgroundColor = .blue
-        btn2.addTarget(self, action: #selector(goToMemorandum), for: .touchUpInside)
+        btn2.addTarget(self, action: #selector(goToMemo), for: .touchUpInside)
         self.view.addSubview(btn2)
         
         let btn3 = UIButton.init(frame: CGRect.init(x: 100, y: 300, width: 100, height: 100))
@@ -40,6 +43,7 @@ class XJHomeViewController: UIViewController {
         self.view.addSubview(btn4)
         
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
@@ -49,8 +53,8 @@ class XJHomeViewController: UIViewController {
         super.viewDidDisappear(animated)
     }
     //MARK: 点击进入备忘录界面
-    @objc func goToMemorandum(){
-        let vc = XJMemorandumViewController()
+    @objc func goToMemo(){
+        let vc = XJMemoViewController()
         
         self.navigationController!.pushViewController(vc, animated: true)
     }

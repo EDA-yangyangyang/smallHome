@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 func delog(filePath: String = #file, rowCount: Int = #line) {
     #if DEBUG
     let fileName = (filePath as NSString).lastPathComponent.replacingOccurrences(of: ".Swift", with: "")

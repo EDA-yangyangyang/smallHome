@@ -1,29 +1,49 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14133" systemVersion="17E202" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Memorandum" representedClassName="Memorandum" syncable="YES" codeGenerationType="class">
-        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="headline" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="endPersons" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Person" inverseName="gottenMemorandums" inverseEntity="Person" syncable="YES"/>
-        <relationship name="startPerson" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="sendMemorandums" inverseEntity="Person" syncable="YES"/>
-    </entity>
-    <entity name="Person" representedClassName="Person" syncable="YES" codeGenerationType="class">
-        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Group" representedClassName="Group" syncable="YES" codeGenerationType="class">
+        <attribute name="emID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="headImageUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="gottenMemorandums" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Memorandum" inverseName="endPersons" inverseEntity="Memorandum" syncable="YES"/>
-        <relationship name="gottenReminders" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Reminder" inverseName="endPersons" inverseEntity="Reminder" syncable="YES"/>
-        <relationship name="sendMemorandums" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Memorandum" inverseName="startPerson" inverseEntity="Memorandum" syncable="YES"/>
-        <relationship name="sendReminders" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Reminder" inverseName="startPerson" inverseEntity="Reminder" syncable="YES"/>
+        <attribute name="objectId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="creater" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="creater" inverseEntity="User" syncable="YES"/>
+        <relationship name="memo" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Memo" inverseName="group" inverseEntity="Memo" syncable="YES"/>
+        <relationship name="users" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="belongGroup" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="Memo" representedClassName="Memo" syncable="YES" codeGenerationType="class">
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="headline" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="objectId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="endPersons" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="gottenMemorandums" inverseEntity="User" syncable="YES"/>
+        <relationship name="group" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Group" inverseName="memo" inverseEntity="Group" syncable="YES"/>
+        <relationship name="startPerson" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="sendMemorandums" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="Reminder" representedClassName="Reminder" syncable="YES" codeGenerationType="class">
         <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <relationship name="endPersons" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="gottenReminders" inverseEntity="Person" syncable="YES"/>
-        <relationship name="startPerson" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="sendReminders" inverseEntity="Person" syncable="YES"/>
+        <relationship name="endPersons" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="gottenReminders" inverseEntity="User" syncable="YES"/>
+        <relationship name="startPerson" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="sendReminders" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
+        <attribute name="emID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="headImageUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="objectId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="belongGroup" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Group" inverseName="users" inverseEntity="Group" syncable="YES"/>
+        <relationship name="creater" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Group" inverseName="creater" inverseEntity="Group" syncable="YES"/>
+        <relationship name="gottenMemorandums" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Memo" inverseName="endPersons" inverseEntity="Memo" syncable="YES"/>
+        <relationship name="gottenReminders" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Reminder" inverseName="endPersons" inverseEntity="Reminder" syncable="YES"/>
+        <relationship name="sendMemorandums" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Memo" inverseName="startPerson" inverseEntity="Memo" syncable="YES"/>
+        <relationship name="sendReminders" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Reminder" inverseName="startPerson" inverseEntity="Reminder" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Person" positionX="-389" positionY="-0" width="128" height="135"/>
-        <element name="Memorandum" positionX="-54" positionY="0" width="128" height="120"/>
+        <element name="Group" positionX="-225" positionY="72" width="128" height="165"/>
+        <element name="Memo" positionX="-54" positionY="0" width="128" height="150"/>
         <element name="Reminder" positionX="-207" positionY="63" width="128" height="105"/>
+        <element name="User" positionX="-389" positionY="-0" width="128" height="240"/>
     </elements>
 </model>

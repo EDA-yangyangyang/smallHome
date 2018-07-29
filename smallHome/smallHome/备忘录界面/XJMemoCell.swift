@@ -90,8 +90,8 @@ class XJMemoCell: UITableViewCell {
     }
     
     
-    var _memo:Memorandum?
-    open func setModel(memo : Memorandum){
+    var _memo:Memo?
+    open func setModel(memo : Memo){
         _memo = memo
 //        title.text = memo.headline ?? "memo_headline设置失误"
 //        dateLabel.text = "test.test"

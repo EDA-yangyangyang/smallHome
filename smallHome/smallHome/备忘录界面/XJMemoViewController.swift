@@ -1,5 +1,5 @@
 //
-//  XJMemorandumViewController.swift
+//  XJMemoViewController.swift
 //  smallHome
 //
 //  Created by 羊羊羊 on 2018/5/24.
@@ -8,11 +8,12 @@
 
 import UIKit
 import SnapKit
-class XJMemorandumViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, XJMemoDelegate{
+class XJMemoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     //tableView懒加载
     lazy var tableView: UITableView = {
-//        let rect = CGRect(x: 0, y: 44, width: self.view.frame.width, height: self.view.frame.height-44)
-        return UITableView(frame: self.view.frame, style: .grouped)
+        let height = self.navigationController!.navigationBar.frame.height
+        let rect = CGRect(x: 0, y: height, width: self.view.frame.width, height: self.view.frame.height-height)
+        return UITableView(frame: rect, style: .grouped)
     }()
     //设置重用标识符
     let memoReuseIdentifier = "memoReuseIdentifier"
@@ -20,12 +21,11 @@ class XJMemorandumViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.titleTextAttributes
+        
         
 //        self.title = "MMemo"
         self.navigationController?.navigationBar.tintColor = g_titleColor
-        //设置web代理
-        XJWebManager.shared.memoDelegate = self
+        
         //设置高度
         tableView.rowHeight = 187;
         //注册单元格
@@ -53,9 +53,9 @@ class XJMemorandumViewController: UIViewController, UITableViewDelegate, UITable
         return 100
     }
     //数据源
-    lazy var dataArray: [Memorandum] = {
+    lazy var dataArray: [Memo] = {
         let manager = XJModelManager.init()
-        return manager.getMemorandumInfo()
+        return manager.getMemoInfo()
     }()
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -71,7 +71,7 @@ class XJMemorandumViewController: UIViewController, UITableViewDelegate, UITable
         self.view.addSubview(vc.view)
         vc.view.backgroundColor = UIColor.clear
         vc.view.alpha = 1.0
-        let cellRact = mainView.frame
+        
         let rect = mainView.convert(mainView.bounds, to: self.view.window)
         vc.view.addSubview(mainView)
         mainView.frame = rect
@@ -101,7 +101,7 @@ class XJMemorandumViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     //收到新数据以后调用的代理方法
-    func recivedNewMemo(memo: Memorandum?) {
+    func recivedNewMemo(memo: Memo?) {
         
     }
     // MARK: - tableView 数量选项以及cell具体设置

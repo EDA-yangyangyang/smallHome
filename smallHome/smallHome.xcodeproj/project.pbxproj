@@ -9,9 +9,14 @@
 /* Begin PBXBuildFile section */
 		34BF5AAE20B6A38A00303F7E /* XJChatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BF5AAD20B6A38A00303F7E /* XJChatTableViewController.swift */; };
 		355275076D1733CF7A881E64 /* Pods_smallHome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06DAAA9D229A84A95FD837B0 /* Pods_smallHome.framework */; };
+		F2156A162104585C00D56EB5 /* XJEMManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2156A152104585C00D56EB5 /* XJEMManager.swift */; };
 		F22C236820C7A6D900787F1F /* XJMemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22C236620C7A6D900787F1F /* XJMemoCell.swift */; };
 		F22C236920C7A6D900787F1F /* XJMemoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F22C236720C7A6D900787F1F /* XJMemoCell.xib */; };
 		F22C236D20C7B6F300787F1F /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22C236C20C7B6F300787F1F /* Global.swift */; };
+		F241C45720DDE9ED00F84207 /* 0000.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F241C45620DDE9ED00F84207 /* 0000.jpg */; };
+		F256232420D7C40100623A87 /* XJBmobManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F256232320D7C40100623A87 /* XJBmobManager.swift */; };
+		F256232A20D7D89C00623A87 /* XJManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F256232920D7D89C00623A87 /* XJManager.swift */; };
+		F263C20120DA27ED00822B84 /* manager_global.swift in Sources */ = {isa = PBXBuildFile; fileRef = F263C20020DA27ED00822B84 /* manager_global.swift */; };
 		F2988BB320C81CA50068B49B /* XJMemoDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2988BB220C81CA50068B49B /* XJMemoDetailController.swift */; };
 		F2EF48EA20B681F8005C076F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF48E920B681F8005C076F /* AppDelegate.swift */; };
 		F2EF48F220B681F8005C076F /* smallHome.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F2EF48F020B681F8005C076F /* smallHome.xcdatamodeld */; };
@@ -19,10 +24,8 @@
 		F2EF48F720B681F9005C076F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2EF48F520B681F9005C076F /* LaunchScreen.storyboard */; };
 		F2EF490920B68597005C076F /* XJModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF490820B68597005C076F /* XJModelManager.swift */; };
 		F2EF490C20B685C0005C076F /* XJHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF490B20B685C0005C076F /* XJHomeViewController.swift */; };
-		F2EF491320B688EE005C076F /* XJMemorandumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF491220B688EE005C076F /* XJMemorandumViewController.swift */; };
-		F2EF491520B68909005C076F /* XJWebManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF491420B68909005C076F /* XJWebManager.swift */; };
+		F2EF491320B688EE005C076F /* XJMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF491220B688EE005C076F /* XJMemoViewController.swift */; };
 		F2EF491720B6A763005C076F /* SwiftPCH.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF491620B6A763005C076F /* SwiftPCH.swift */; };
-		F2EF491D20B6BB25005C076F /* XJPersonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EF491C20B6BB25005C076F /* XJPersonManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,9 +33,15 @@
 		06DAAA9D229A84A95FD837B0 /* Pods_smallHome.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_smallHome.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		34BF5AAD20B6A38A00303F7E /* XJChatTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = XJChatTableViewController.swift; path = smallHome/XJChatTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		B444E9D38C8FF76F92CF0154 /* Pods-smallHome.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smallHome.debug.xcconfig"; path = "Pods/Target Support Files/Pods-smallHome/Pods-smallHome.debug.xcconfig"; sourceTree = "<group>"; };
+		F2156A152104585C00D56EB5 /* XJEMManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJEMManager.swift; sourceTree = "<group>"; };
 		F22C236620C7A6D900787F1F /* XJMemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJMemoCell.swift; sourceTree = "<group>"; };
 		F22C236720C7A6D900787F1F /* XJMemoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XJMemoCell.xib; sourceTree = "<group>"; };
 		F22C236C20C7B6F300787F1F /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		F241C45620DDE9ED00F84207 /* 0000.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0000.jpg; sourceTree = "<group>"; };
+		F256232320D7C40100623A87 /* XJBmobManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJBmobManager.swift; sourceTree = "<group>"; };
+		F256232620D7C44800623A87 /* smallHome-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "smallHome-Bridging-Header.h"; sourceTree = "<group>"; };
+		F256232920D7D89C00623A87 /* XJManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJManager.swift; sourceTree = "<group>"; };
+		F263C20020DA27ED00822B84 /* manager_global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = manager_global.swift; sourceTree = "<group>"; };
 		F2988BB220C81CA50068B49B /* XJMemoDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJMemoDetailController.swift; sourceTree = "<group>"; };
 		F2EF48E620B681F8005C076F /* smallHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smallHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2EF48E920B681F8005C076F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,10 +51,8 @@
 		F2EF48F820B681F9005C076F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2EF490820B68597005C076F /* XJModelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJModelManager.swift; sourceTree = "<group>"; };
 		F2EF490B20B685C0005C076F /* XJHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJHomeViewController.swift; sourceTree = "<group>"; };
-		F2EF491220B688EE005C076F /* XJMemorandumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJMemorandumViewController.swift; sourceTree = "<group>"; };
-		F2EF491420B68909005C076F /* XJWebManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJWebManager.swift; sourceTree = "<group>"; };
+		F2EF491220B688EE005C076F /* XJMemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJMemoViewController.swift; sourceTree = "<group>"; };
 		F2EF491620B6A763005C076F /* SwiftPCH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftPCH.swift; sourceTree = "<group>"; };
-		F2EF491C20B6BB25005C076F /* XJPersonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJPersonManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +124,7 @@
 		F2EF490220B68294005C076F /* 备忘录界面 */ = {
 			isa = PBXGroup;
 			children = (
-				F2EF491220B688EE005C076F /* XJMemorandumViewController.swift */,
+				F2EF491220B688EE005C076F /* XJMemoViewController.swift */,
 				F22C236620C7A6D900787F1F /* XJMemoCell.swift */,
 				F22C236720C7A6D900787F1F /* XJMemoCell.xib */,
 				F2988BB220C81CA50068B49B /* XJMemoDetailController.swift */,
@@ -162,9 +169,13 @@
 		F2EF491020B6877D005C076F /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				F241C45620DDE9ED00F84207 /* 0000.jpg */,
+				F256232920D7D89C00623A87 /* XJManager.swift */,
+				F2156A152104585C00D56EB5 /* XJEMManager.swift */,
 				F2EF490820B68597005C076F /* XJModelManager.swift */,
-				F2EF491C20B6BB25005C076F /* XJPersonManager.swift */,
-				F2EF491420B68909005C076F /* XJWebManager.swift */,
+				F256232320D7C40100623A87 /* XJBmobManager.swift */,
+				F263C20020DA27ED00822B84 /* manager_global.swift */,
+				F256232620D7C44800623A87 /* smallHome-Bridging-Header.h */,
 			);
 			name = Manager;
 			sourceTree = "<group>";
@@ -219,6 +230,7 @@
 				TargetAttributes = {
 					F2EF48E520B681F8005C076F = {
 						CreatedOnToolsVersion = 9.3.1;
+						LastSwiftMigration = 0930;
 					};
 				};
 			};
@@ -248,6 +260,7 @@
 				F2EF48F720B681F9005C076F /* LaunchScreen.storyboard in Resources */,
 				F22C236920C7A6D900787F1F /* XJMemoCell.xib in Resources */,
 				F2EF48F420B681F9005C076F /* Assets.xcassets in Resources */,
+				F241C45720DDE9ED00F84207 /* 0000.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,10 +307,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-smallHome/Pods-smallHome-frameworks.sh",
+				"${PODS_ROOT}/Hyphenate/iOS_IM_SDK_V3.3.9/HyphenateFullSDK/Hyphenate.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hyphenate.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,13 +346,15 @@
 				F2EF491720B6A763005C076F /* SwiftPCH.swift in Sources */,
 				F2EF48EA20B681F8005C076F /* AppDelegate.swift in Sources */,
 				F22C236820C7A6D900787F1F /* XJMemoCell.swift in Sources */,
-				F2EF491320B688EE005C076F /* XJMemorandumViewController.swift in Sources */,
+				F2EF491320B688EE005C076F /* XJMemoViewController.swift in Sources */,
+				F2156A162104585C00D56EB5 /* XJEMManager.swift in Sources */,
 				F2EF48F220B681F8005C076F /* smallHome.xcdatamodeld in Sources */,
 				F2988BB320C81CA50068B49B /* XJMemoDetailController.swift in Sources */,
+				F256232A20D7D89C00623A87 /* XJManager.swift in Sources */,
 				F22C236D20C7B6F300787F1F /* Global.swift in Sources */,
-				F2EF491520B68909005C076F /* XJWebManager.swift in Sources */,
 				F2EF490C20B685C0005C076F /* XJHomeViewController.swift in Sources */,
-				F2EF491D20B6BB25005C076F /* XJPersonManager.swift in Sources */,
+				F256232420D7C40100623A87 /* XJBmobManager.swift in Sources */,
+				F263C20120DA27ED00822B84 /* manager_global.swift in Sources */,
 				34BF5AAE20B6A38A00303F7E /* XJChatTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -473,12 +492,18 @@
 			baseConfigurationReference = B444E9D38C8FF76F92CF0154 /* Pods-smallHome.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FPFL449QLB;
 				INFOPLIST_FILE = smallHome/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = yyy.smallHome;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "smallHome/smallHome-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -489,12 +514,17 @@
 			baseConfigurationReference = 04CA9941EE584FD7FDBAC27B /* Pods-smallHome.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FPFL449QLB;
 				INFOPLIST_FILE = smallHome/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = yyy.smallHome;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "smallHome/smallHome-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

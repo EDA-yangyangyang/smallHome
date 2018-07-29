@@ -9,7 +9,7 @@
 import UIKit
 
 class XJMemoDetailController: UIViewController {
-    open var memo:Memorandum?
+    open var memo:Memo?
     override func viewDidLoad() {
         super.viewDidLoad()
 
