@@ -56,13 +56,13 @@ class XJManager: NSObject {
         
 //        logout()
         
-//        self.creatUser(username: "test3", password: "123456", name: "yyy3") { (error, user) in
-//            if error == nil {
-//                delog(user)
-//            } else {
-//                delog(error)
-//            }
-//        }
+        self.creatUser(username: "test3", password: "123456", name: "yyy3") { (error, user) in
+            if error == nil {
+                delog(user)
+            } else {
+                delog(error)
+            }
+        }
         
         self.loginUser(username: "test3", password: "123456") { (error, user) in
             if error == nil {

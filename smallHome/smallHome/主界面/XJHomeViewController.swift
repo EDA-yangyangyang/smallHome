@@ -41,7 +41,7 @@ class XJHomeViewController: UIViewController {
         
         let btn4 = UIButton.init(frame: CGRect.init(x: 300, y: 300, width: 100, height: 100))
         self.view.addSubview(btn4)
-        
+            
     }
     
     override func viewWillAppear(_ animated: Bool) {
